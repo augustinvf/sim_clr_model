@@ -88,7 +88,7 @@ def get_color_distortion(s=0.5):  # 0.5 for CIFAR10 by default
     return color_distort
 
 
-@hydra.main(config_path='simclr_config.yml')
+@hydra.main(config_path='./simclr_config.yml')
 def train(args: DictConfig) -> None:
     assert torch.cuda.is_available()
     cudnn.benchmark = True

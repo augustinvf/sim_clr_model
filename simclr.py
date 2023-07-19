@@ -97,7 +97,7 @@ def train(args: DictConfig) -> None:
                                           transforms.RandomHorizontalFlip(p=0.5),
                                           get_color_distortion(s=0.5),
                                           transforms.ToTensor()])
-    data_dir = hydra.utils.to_absolute_path(args.data_dir)  # get absolute path of data dir
+    data_dir = hydra.utils.to_absolute_path("/home/aptikal/chenevoa/projets_environnement_py_torch/sim_clr_model)  # get absolute path of data dir")
     train_set = CIFAR10Pair(root=data_dir,
                             train=True,
                             transform=train_transform,
@@ -261,7 +261,7 @@ def finetune(args: DictConfig) -> None:
                                           transforms.ToTensor()])
     test_transform = transforms.ToTensor()
 
-    data_dir = hydra.utils.to_absolute_path(args.data_dir)
+    data_dir = hydra.utils.to_absolute_path("/home/aptikal/chenevoa/projets_environnement_py_torch/sim_clr_model")
     train_set = CIFAR10(root=data_dir, train=True, transform=train_transform, download=False)
     test_set = CIFAR10(root=data_dir, train=False, transform=test_transform, download=False)
 
